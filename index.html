@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshata's Inspiration Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+<body>
+
+    
+    <header>
+        <video autoplay muted loop>
+            <source src="https://cdn.pixabay.com/video/2022/02/09/107257-678130120_large.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1>
+            <span class="word akshata">Akshata's</span>
+            <span class="word inspiration">Inspiration</span>
+            <span class="word hub">Hub</span>
+            <span class="heart-icon">❤️</span>
+        </h1>
+    </header>
+    
+    
+    <!-- Navbar with Logo -->
+    <nav class="nav">
+        <div class="logo-container">
+            <div class="heart-shape">
+                <h1 class="logo-text">AIH</h1>
+            </div>
+        </div>
+        <h1 class="logo-slogan">Akshata's Inspiration Hub</h1>
+        <ul class="nav-content">
+            <li class="nav-list" id="love-note-icon">
+                <a href="#love-note" class="link-item">
+                <div class="link-icon">❤️</div> <!-- Use a heart emoji for the icon -->
+                <span class="link-text">Love Note</span></a>
+            </li>
+            <li class="nav-list">
+                <a href="#upsc-articles" class="link-item">
+                    <i class='bx bxs-book link-icon'></i>
+                    <span class="link-text">UPSC Articles</span>
+                </a>
+            </li>
+            <li class="nav-list" id="emotional-support-icon">
+                <a href="#emotional-support" class="link-item">
+                <div class="link-icon">🤝</div> 
+                <!-- Use a handshake emoji for the icon -->
+                <span class="link-text">Emotional Support</span></a>
+            </li>
+            <li class="nav-list">
+                <a href="#gallery" class="link-item">
+                    <i class='bx bxs-camera link-icon'></i>
+                    <span class="link-text">Gallery</span>
+                </a>
+            </li>
+            <li class="nav-list">
+                <a href="#" id="mcqsPreparationBtn" class="link-item">
+                    <i class='bx bxs-pencil link-icon'></i>
+                    <span class="link-text">MCQ's Preparation</span>
+                </a>
+            </li>
+            <li class="nav-list">
+                <a href="#" id="takeTestBtn" class="link-item">
+                    <i class='bx bxs-graduation link-icon'></i>
+                    <span class="link-text">Take Test</span>
+                </a>
+            </li>
+            <!-- <span class="indicator"></span> -->
+        </ul>
+    </nav>
+        
+   
+
+    <section id="love-note" class="section love-note-section">
+    <div class="love-container">
+        <h2>Together Again</h2>
+        <p id="loveQuote" style="font-weight: bold;"></p> <!-- Quote will be displayed here -->
+    </div>
+</section>
+
+
+<section id="upsc-articles" class="section upsc-articles-section">
+    <div class="upsc-container">
+        <h2 class="upsc-title">UPSC Prep Inspiration</h2>
+        <p class="upsc-description">Find articles that matter as you prepare for the UPSC exams. I hope these little supports help in your journey.</p>
+        <div class="upsc-carousel">
+            <div class="upsc-carousel-slides">
+                <div class="upsc-carousel-slide">
+                    <h3>UPSC Previous Year Question Paper, Prelims & Mains PYQ's PDF</h3><br>
+                    <a href="https://vajiramandravi.com/upsc-previous-papers/">Read More</a>
+                </div>
+
+                <div class="upsc-carousel-slide">
+                    <h3>Daily Current Affairs for UPSC</h3><br><br>
+                    <a href="https://vajiramandravi.com/upsc-daily-current-affairs/">Read More</a>
+                </div>
+
+                <div class="upsc-carousel-slide">
+                    <h3>QUEST UPSC NOTES</h3><br><br><br>
+                    <a href="https://vajiramandravi.com/quest-upsc-notes/">Read More</a>
+                </div>
+
+                <div class="upsc-carousel-slide">
+                    <h3>UPSC Civil Services Exam - Age Limit, Application Process, Syllabus, Eligibility</h3>
+                    <a href="https://vajiramandravi.com/upsc-ias-exam/">Read More</a>
+                </div>
+
+                <div class="upsc-carousel-slide">
+                    <h3>Prelims Pointers</h3><br><br><br>
+                    <a href="https://vajiramandravi.com/upsc-daily-current-affairs/prelims-pointers/">Read More</a>
+                </div>
+
+                <div class="upsc-carousel-slide">
+                    <h3>Mains Articles</h3><br><br><br>
+                    <a href="https://vajiramandravi.com/upsc-daily-current-affairs/mains-articles/">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+<section id="emotional-support" class="section emotional-support-section">
+    <div class="container-emotional-support">
+        <h2>Emotional Support</h2>
+    </div>
+    <div id="supportReasons"></div> 
+</section>
+
+
+<!-- Modal for displaying message -->
+<div id="supportModal" class="modal">
+    <div class="modal-content">
+        
+        <p id="modalSupportMessage"></p>
+    </div>
+</div>
+
+
+
+  
+
+<section id="gallery" class="section gallery-section">
+    <div class="gallery">
+        <h2>Memory Lane</h2>
+        <div class="column">   
+        <div class="row1">
+        <div class="wrap animate pop">
+            <div class="overlay">
+                <div class="overlay-content animate slide-left delay-2">
+                    <h1 class="animate slide-left pop delay-4">AU CONVENTION CENTER</h1>
+                    <p class="animate slide-left pop delay-5" >DATE: 27th July,<br>2022</p>
+                </div>
+                <div class="image-content animate slide delay-5" style="background-image: url('images/au.png');"></div>
+            </div>
+            <div class="text">
+                <p>Akshata, it was July 27th, 2023, and that was the day I truly realized how much I enjoy talking to you. Time flies when I’m with you, and even though we used to talk on the phone before, that day felt different. I realized you're not just any person but a beautiful woman, inside and out. I don’t think we talked much that day, but even in those few moments, you made that department day so special for me.</p>
+            </div>
+        </div>
+        <div class="wrap animate pop">
+            <div class="overlay">
+                <div class="overlay-content animate slide-left delay-2">
+                    <h1 class="animate slide-left pop delay-4">ARAKU</h1>
+                    <p class="animate slide-left pop delay-5">DATE: 12th Febuary, 2023</p>
+                </div>
+                <div class="image-content animate slide delay-5" style="background-image: url('images/araku.jpg');"></div>
+            </div>
+            <div class="text">
+                <p>Akshata, it was February 12th, 2023, when we went to Araku. I still remember that night clearly. Around 2 AM, we went for a walk, talking for about an hour. It was the first time I spent a night like that with you, and I loved every moment of it.
+
+                    The next day, we went on the trek to Katiki Waterfalls. Those moments are still fresh in my mind, like they happened just yesterday. Spending time with you on that trip was one of the best memories I have, and I’ll never forget it.</p>
+            </div>
+        </div>
+        <div class="wrap animate pop">
+            <div class="overlay">
+                <div class="overlay-content animate slide-left delay-2">
+                    <h1 class="animate slide-left pop delay-4">BHEEMILI BEACH</h1>
+                    <p class="animate slide-left pop delay-5">DATE: 3rd March, 2023</p>
+                </div>
+                <div class="image-content animate slide delay-5" style="background-image: url('images/beach.jpg');background-position: center; background-size: cover;"></div>
+            </div>
+            <div class="text">
+                <p>Akshata, it was March 3rd, 2023, and it was our first morning date. Do you remember how we held hands for almost 30 minutes? We didn’t even talk much; we just enjoyed the sound of the waves and looked into each other’s eyes. That was the day I fell for you completely.
+
+                    Standing on the rocks, feeling the beach waves around us while holding your hand made me realize how special that moment was. I wanted to express my feelings so badly, but I couldn’t. Just holding your hand that day made me feel like I was in another world.</p>
+            </div>
+        </div>
+
+        <div class="wrap animate pop">
+            <div class="overlay">
+                <div class="overlay-content animate slide-left delay-2">
+                    <h1 class="animate slide-left pop delay-4">ROSE HILL CHURCH</h1>
+                    <p class="animate slide-left pop delay-5" >DATE: 3rd March, 2023</p>
+                </div>
+                <div class="image-content animate slide delay-5" style="background-image: url('images/rosehill.jpg');"></div>
+            </div>
+            <div class="text">
+                <p>Akshata, it was March 3rd, 2023, and in the evening, we went to Rose Hill Church. It was our first night date, and do you remember how we sat on the steps, enjoying the night beach? The sound of the waves was soothing, and even though I wanted to express my love, I held back.
+
+                    Sitting beside you and gazing at the moon, I felt something indescribable—a moment we could only feel together. And do you remember when I laid my head on your shoulder for almost 10 minutes? Those 10 minutes felt like pure heaven, a blissful escape where everything else faded away, and it was just us</p>
+            </div>
+        </div>
+        <div class="wrap animate pop">
+            <div class="overlay">
+                <div class="overlay-content animate slide-left delay-2">
+                    <h1 class="animate slide-left pop delay-4">DOLPHIN LIGHT HOUSE</h1>
+                    <p class="animate slide-left pop delay-5">DATE: 4th March, 2023</p>
+                </div>
+                <div class="image-content animate slide delay-5" style="background-image: url('images/dolpin-lighthouse.jpg');background-position: center; background-size: cover;"></div>
+            </div>
+            <div class="text">
+                <p>Akshata, it was March 4th, 2023, when we visited the Dolphin Lighthouse. We were running late, and I remember thinking, 'If only we had arrived 20 minutes earlier, we could have seen it all.' But then, in a surprising twist, the security officer allowed us in, and we were treated to a breathtaking view. Standing beside you, I felt like I was in a dream, completely out of this world. Even then, as the beauty of the moment wrapped around us, I wanted to express my love, but the words just wouldn't come.
+
+                    That day was truly special, from our delightful lunch to our visit back to Rose Hill. Even though we didn't stay long there, every second felt precious. I cherished that day with you, holding onto the memories that continue to make my heart smile.</p>
+            </div>
+        </div>
+        
+
+
+        </div>
+        <div class="row2">
+            <div class="wrap animate pop">
+                <div class="overlay">
+                    <div class="overlay-content animate slide-left delay-2">
+                        <h1 class="animate slide-left pop delay-4">ETHNIC DAY</h1>
+                        <p class="animate slide-left pop delay-5">DATE: 7th March, 2023</p>
+                    </div>
+                    <div class="image-content animate slide delay-5" style="background-image: url('images/ethnic_day.jpg');"></div>
+                </div>
+                <div class="text">
+                    <p>Akshata, it was March 7th, 2023, a day filled with color and joy. Remember how we both wore the same shade of yellow? It felt like fate had woven us together in that moment. Everyone admired us, and I could sense the whispers, with some wondering if there was something special between us, almost like it was our own little haldi function.
+
+                        I'll never forget that day, especially when I felt a twinge of jealousy as Chatur took photos with you, his hand resting on your shoulder. I stepped away, feeling a mix of emotions, but then you called me back, saying, 'Let’s take photos.' In that moment, I felt so special to you, as you held my hand like a couple, and I couldn’t shake the feeling that you were telling everyone, "I am his girl."
+                        
+                        That memory still makes me feel like I’m flying in the sky. It was such a wonderful day, and it was the first time I danced with you. I cherish every moment we shared that day</p>
+                </div>
+            </div>
+            <div class="wrap animate pop">
+                <div class="overlay">
+                    <div class="overlay-content animate slide-left delay-2">
+                        <h1 class="animate slide-left pop delay-4">HOSTEL OFFICE</h1>
+                        <p class="animate slide-left pop delay-5">DATE: 24th March, 2023</p>
+                    </div>
+                    <div class="image-content animate slide delay-5" style="background-image: url('images/hostel_office.jpg');"></div>
+                </div>
+                <div class="text">
+                    <p>Akshata, it was March 24th, 2023, and that day will always hold a special place in my heart because it was the best gift I ever received on my birthday. That was the day you gave me my very first hug. I’ll never forget the moment; we were at the hostel office, and you decided to wrap your arms around me. As soon as you hugged me, something stirred within me. I was stunned, and tears welled up in my eyes—not from sadness, but from overwhelming happiness.
+
+                        You looked at me, a little surprised, and asked, "You won't hug me back?" In that instant, everything felt right in the world. I wrapped my arms around you, and it felt like time stood still. It was the first time I ever hugged a girl, and I still remember the warmth of your embrace. Every butterfly in my stomach took flight. That hug was more than just a gesture; it was a connection that I had never experienced before.
+                        
+                        That feeling lingers with me even as I write this. It was the best and most beautiful gift I have ever received in my life—a moment that made my birthday unforgettable. Thank you for sharing that precious memory with me; it means more than words can express.And do you remember? That night, around 2 AM, I gathered the courage to express my feelings to you.That entire day was special, but your hug was the highlight, marking the beginning of something truly wonderful.</p>
+                </div>
+            </div>
+
+        <div class="wrap animate pop">
+            <div class="overlay">
+                <div class="overlay-content animate slide-left delay-2">
+                    <h1 class="animate slide-left pop delay-4">TEMPLE</h1>
+                    <p class="animate slide-left pop delay-5" >DATE: 31st March, 2023</p>
+                </div>
+                <div class="image-content animate slide delay-5" style="background-image: url('images/steps.jpg');"></div>
+            </div>
+            <div class="text">
+                <p>Akshata, it was March 31st, 2023, a day that became unforgettable in both our lives. That was the day we officially entered into our relationship, a moment that felt like destiny. After the beautiful hug on my birthday, we both realized that just those few moments weren’t enough. We craved more—more hugs, more closeness, and a deeper connection.
+
+                    Our first temple date together felt like a perfect setting for what was about to happen. As we sat on the steps, the world around us faded, and we found ourselves wrapped in each other's arms once again. We hugged tightly for over 25 minutes, feeling the warmth of each other’s presence. In that moment, I turned to you and, with all my heart, I said, "I’m sorry," and kissed you on the cheek. The surprise in your eyes made my heart race.
+                    
+                    Then, after a moment that felt like eternity, you accepted my proposal, and just like that, we were officially together. The happiness was overwhelming, and we hugged again, tighter than before. I found myself saying "sorry" once more, and when you asked why, I simply replied, "Yes, but looking into your eyes, I couldn't resist."
+                    
+                    With a mix of nervous excitement and pure affection, I kissed you on your lips. It felt like my soul left my body in that instant, and I was lost in the magic of that moment. I half-expected you to slap me for being so bold, but instead, you welcomed me with open arms, and we kissed again, this time for what felt like forever—almost 45 minutes.
+                    
+                    In those moments, as we lost track of time and even became a little dehydrated from the sweetness of it all, I was mesmerized by the beauty in your eyes. You made me forget the entire world around us, and I couldn’t help but think, "Akshata, you are truly a beautiful woman."
+                    
+                    I love you for infinity, and that day will forever hold a special place in my heart.</p>
+            </div>
+        </div>
+        <div class="wrap animate pop">
+            <div class="overlay">
+                <div class="overlay-content animate slide-left delay-2">
+                    <h1 class="animate slide-left pop delay-4">NEW YEAR BEACH</h1>
+                    <p class="animate slide-left pop delay-5">DATE: 31st December, 2023</p>
+                </div>
+                <div class="image-content animate slide delay-5" style="background-image: url('images/newyear.jpg');background-position: center; background-size: cover;"></div>
+            </div>
+            <div class="text">
+                <p>Akshata, it was December 31st, 2023, and it turned out to be the best New Year’s night I’ve ever experienced. You truly made it special by choosing to be with me, even when Sriya called you to come home. I know how much you wanted to go, but you decided to stay and welcome the New Year by my side. That speaks volumes about your love—it's truly unconditional.
+
+                    Spending the entire night with you was the greatest gift I could have asked for. But what made it even more precious was the moment when I asked you to sleep on my lap, and you surprised me by saying, “No, today you sleep on my lap.” In that instant, my heart swelled, and tears filled my eyes, but I held them back, not wanting to show my vulnerability.
+                    
+                    That night, resting my head in your lap, I felt like the luckiest person in the world. You are truly the most beautiful woman, inside and out. When we woke up and shared that kiss, it wasn’t just any kiss; it was a sweet promise of “I love you” as we welcomed the New Year together.
+                    
+                    It was a magical night that I’ll forever cherish, and I can’t help but hope that we’ll create many more New Year’s memories together in the future.</p>
+            </div>
+        </div>
+
+        
+
+        <div class="wrap animate pop">
+            <div class="overlay">
+                <div class="overlay-content animate slide-left delay-2">
+                    <h1 class="animate slide-left pop delay-4">COLLEGE</h1>
+                    <p class="animate slide-left pop delay-5">DATE: 31st March, 2024</p>
+                </div>
+                <div class="image-content animate slide delay-5" style="background-image: url('images/college.jpg');background-position: center; background-size: cover;"></div>
+            </div>
+            <div class="text">
+                <p>Akshata, it was March 31st, 2024, and can you believe it? We’ve celebrated a whole year together! One year with you feels like a beautiful dream, and I’m so grateful for every moment we’ve shared. But I know I’ve put a lot on your shoulders, and I’m sorry for that. One year is not nearly enough—I want countless days and years with you, side by side, holding each other up.
+
+                    I realize I didn’t plan our anniversary as beautifully as I should have, and I know that upset you. Back then, I didn’t understand how to express love and care in the way you deserved. But now, I promise to make you feel like the most cherished woman in the world. This past year has felt like a glimpse of heaven—filled with late-night calls, sweet chats, and unforgettable dates. Just thinking about those moments brings tears to my eyes, and I can’t help but wish for another chance to show you how much you mean to me.
+                    
+                    I miss you so much, and even though my anniversary plan might not have been perfect, being with you made it special. Every little moment together, no matter how simple, turns into something magical because it’s you by my side. I regret not expressing my feelings better, but all I need is another chance to shower you with the love and care you truly deserve.
+                    
+                    Let’s create more beautiful memories together, Akshata. I love you.</p>
+            </div>
+        </div>
+    </div></div></div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="combined-love-section">
+    <div class="gratitude-wall">
+        <div class="container">
+            <h2>Gratitude Wall</h2>
+        </div>
+        <div class="wall-grid">
+            <!-- Row 1 with six hearts -->
+            <div class="gratitude-item">
+                <span class="heart" style="color: red;">❤️</span>
+                <p class="hidden-message">You waited for me to understand what love really means. Now, I'm ready to love you with the same patience and care you showed me, without ever taking it for granted.</p>
+            </div>
+            <div class="gratitude-item">
+                <span class="heart" style="color: blue;">💙</span>
+                <p class="hidden-message">You never left my side, even when I didn’t deserve it. I’m going to stand by you now, through every high and low, with the loyalty and strength you gave me.</p>
+            </div>
+            <div class="gratitude-item">
+                <span class="heart" style="color: green;">💚</span>
+                <p class="hidden-message">You loved me at my worst without asking for anything in return. Now, I promise to love you unconditionally, to always show you that your heart is safe with me.</p>
+            </div>
+            <div class="gratitude-item">
+                <span class="heart" style="color: purple;">💜</span>
+                <p class="hidden-message">You always saw the best in me, even when I couldn’t see it myself. From now on, I will believe in you and support your dreams as fiercely as you supported mine.</p>
+            </div>
+            <div class="gratitude-item">
+                <span class="heart" style="color: yellow;">💛</span>
+                <p class="hidden-message">You cared for me in ways I didn’t even realize at the time. I’m going to show you that same level of care, making sure you always feel cherished, valued, and loved.</p>
+            </div>
+            <div class="gratitude-item">
+                <span class="heart" style="color: orange;">🧡</span>
+                <p class="hidden-message">You accepted my flaws without question. I want to love you just as perfectly, accepting all that you are, and never making you doubt that you’re enough.</p>
+            </div>
+            <!-- Row 2 with six hearts -->
+            <div class="gratitude-item">
+                <span class="heart" style="color: pink;">💖</span>
+                <p class="hidden-message">You filled my life with your kindness and warmth. Now, I’m ready to fill yours with the same warmth, making sure you always feel at home with me.</p>
+            </div>
+            <div class="gratitude-item">
+                <span class="heart" style="color: black;">🖤</span>
+                <p class="hidden-message">All the small gestures of love that you made went unnoticed by me before. I’m going to return those with a thousand small gestures of my own, each one a reminder of how special you are to me.</p>
+            </div>
+            <div class="gratitude-item">
+                <span class="heart" style="color: brown;">🤎</span>
+                <p class="hidden-message">Even when I was lost, you were always my guide. Now, I’ll be the support you can lean on, making sure you never have to carry any burdens alone.</p>
+            </div>
+            <div class="gratitude-item">
+                <span class="heart" style="color: white;">🤍</span>
+                <p class="hidden-message">You never gave up on us, even when things were tough. This time, I’ll be the one to fight for our love, to prove that nothing will ever come between us again.</p>
+            </div>
+            <div class="gratitude-item">
+                <span class="heart" style="color: lightblue;">💙</span>
+                <p class="hidden-message">You made me feel like I was the most important person in the world. I want to spend every day making sure you feel that same way, loved, adored, and appreciated.</p>
+            </div>
+            <div class="gratitude-item">
+                <span class="heart" style="color: lightgreen;">💚</span>
+                <p class="hidden-message">Even when I didn’t deserve your love, you gave it so freely. Now, I’m going to love you with everything I have, proving to you every day that you deserve all the love in the world.</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="love-letter-section">
+        <div class="love-letter">
+            <div class="container"><h2>Open the Love Letter</h2></div>
+            <div class="envelope" id="openLetter">
+                <div class="flap"></div>
+                <div class="letter">
+                    Dear Akshata, <br>
+                    My dearest, I just wanted to say how much you mean to me...
+                </div>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div class="lettermodal" id="letterModal">
+            <div class="letter-modal-content">
+                <h3>Dear Akshata ❤️,</h3>
+                <p>My dearest, I just wanted to say how much you mean to me. You bring joy and light to my life, and I cherish every moment with you.
+
+                    Every day used to start with your message and end with your call. But now, my day starts with hope and ends with tears. There’s a void without you, and it’s something I can’t fill on my own. In a world full of choices, I would still choose you, again and again. No doubts, no second thoughts—just a quiet certainty that, even in our hardest moments, you are the one my heart will always pick.
+                    
+                    I know I wasn’t the partner you deserved. I know I didn’t give you the love, care, and attention you needed. And for that, I am deeply sorry. You gave me your unwavering love and loyalty, but I failed to do the same. You stood by me, and I took that for granted. I’ve come to realize that being "perfect" doesn’t matter, but having true feelings and respect does, and I promise you, my feelings for you have always been real. Even now, they haven’t changed.
+                    
+                    I’ll always choose you—through every challenge, every high, and every low. No matter how much you push me away, my love for you remains. I want to be by your side while we both grow and work on ourselves, together. I know life isn’t easy, but I believe we can face it hand in hand.
+                    
+                    Everyone gives gifts, but what I can give you is respect, loyalty, time, trust, and priority. You’ll always have me, especially on the bad days when things feel heavy. I want you to know that you are loved deeply, and I’ll always be here to help lift your burdens. I want to see you happy and at peace, without any worries weighing you down.
+                    
+                    Akshata, I want you to know that I love you. I’ve made so many mistakes, but if you ever feel that love again, I’ll be here. Even after years, no matter how long it takes, I’ll still be waiting for you with the same feelings. You might think the past will repeat itself, but I am determined to give you the happiness and love you deserve this time.
+                    
+                    I know you’re preparing for UPSC, and I’m sure that comes with a lot of stress. I want to be the one who comforts you, who stands by you when things get tough. I want to be there to support you, not just with words, but with actions that show you how much I truly care.
+                    
+                    I’ve changed, Akshata. I’m not the person I used to be. And while I know that may be hard to believe, I’m asking for the chance to prove it to you. Let’s take things slow, but let’s start over and rebuild the trust that was lost. I want us to create something beautiful—something stronger, something real.
+                    
+                    Even now, I miss the simple things, like your messages and your voice. I long for the day I’ll see that double tick on WhatsApp, hoping that maybe, just maybe, you’ll say "Hi" again.
+                    
+                    I love you, and I’ll love you forever. I’m waiting for you, always.
+                    
+                    Yours,
+                    Hemanth</p>
+                <button class="letter-close-btn" id="letter-closeModal">Close</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+
+
+
+
+
+
+
+
+    <div id="mcqsModal" class="mcqs-modal" style="display: none;">
+        <div class="mcq-modal-content">
+
+            <h2>Select a Topic</h2>
+            <div class="mcq-topic-container" id="mcqTopicButtonsContainer">
+                <button class="mcq-topic-btn" data-topic="economy">Economy</button>
+                <button class="mcq-topic-btn" data-topic="polity">Polity</button>
+                <button class="mcq-topic-btn" data-topic="current-affairs">Current-affairs</button>
+                <button class="mcq-topic-btn" data-topic="international-relations">International Relations</button>
+                <button class="mcq-topic-btn" data-topic="world-history">World History</button>
+                <button class="mcq-topic-btn" data-topic="anthropology">Anthropology</button>
+                <button class="mcq-topic-btn" data-topic="ancient-history-">Ancient History</button>
+                <button class="mcq-topic-btn" data-topic="modern-indian-history">Modern Indian History</button>
+                <button class="mcq-topic-btn" data-topic="indian-geography">Indian Geography</button>
+                <button class="mcq-topic-btn" data-topic="sociology">Sociology</button>
+            </div><br>
+            <button class="mcq-close-btn" id="closeTopicModal">Close</button>
+        </div>
+    </div>
+        
+   
+
+
+   
+    <div id="takeTestModal" class="custom-modal" style="display: none;">
+        <div class="test-modal-content">   
+            <h2>Select a Topic</h2>
+            <div class="test-topic-container">
+                <button class="topic-btn" data-topic="economy">Economy</button>
+                <button class="topic-btn" data-topic="polity">Polity</button>
+                <button class="topic-btn" data-topic="current-affairs">Current Affairs</button>
+                <button class="topic-btn" data-topic="international-relations">International Relations</button>
+                <button class="topic-btn" data-topic="world-history">World History</button>
+                <button class="topic-btn" data-topic="anthropology">Anthropology</button>
+                <button class="topic-btn" data-topic="ancient-history">Ancient History</button>
+                <button class="topic-btn" data-topic="modern-indian-history">Modern Indian History</button>
+                <button class="topic-btn" data-topic="indian-geography">Indian Geography</button>
+                <button class="topic-btn" data-topic="sociology">Sociology</button>
+            </div><br>
+            <button class="test-close-btn" id="closeTakeTestModal">Close</button>
+        </div>
+    </div>
+    
+    
+    
+    
+    <footer>
+        <div class="clouds">
+            <div class="clouds-1"></div>
+            <div class="clouds-2"></div>
+            <div class="clouds-3"></div>
+        </div>
+        <p>Made with love and hope for a second chance ❤️</p>
+    </footer>
+   
+    
+
+    
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('nav');
+            const headerHeight = document.querySelector('header').offsetHeight;
+    
+            if (window.scrollY > headerHeight) {
+                navbar.classList.add('fixed');
+            } else {
+                navbar.classList.remove('fixed');
+            }
+        });
+// Get the modal
+const letterModal = document.getElementById("letterModal");
+
+// Get the button that opens the modal (the envelope)
+const openLetter = document.getElementById("openLetter");
+
+// Get the button that closes the modal
+const closeModalBtn = document.getElementById("letter-closeModal");
+
+// Initially hide the modal
+letterModal.style.display = "none"; // Hide the modal by default
+
+// When the user clicks on the envelope, open the modal
+openLetter.addEventListener("click", function() {
+    letterModal.style.display = "flex"; // Show the modal
+});
+
+// When the user clicks on the close button, close the modal
+closeModalBtn.addEventListener("click", function() {
+    letterModal.style.display = "none"; // Hide the modal
+});
+
+// When the user clicks anywhere outside of the modal, close it
+window.addEventListener("click", function(event) {
+    if (event.target === letterModal) {
+        letterModal.style.display = "none"; // Hide the modal
+    }
+});
+
+
+    </script>
+    
+    
+    <script src="main.js"></script>
+</body>
+</html>

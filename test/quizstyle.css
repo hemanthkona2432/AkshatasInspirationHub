@@ -1,0 +1,172 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background-color: #ff3c7d;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 18px;
+}
+
+/* Quiz Container Styling with Transparent Overlay */
+.quiz-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 30px;
+    background-size: auto;
+    position: relative; /* Position relative for absolute child elements */
+     /* Ensures child elements do not overflow */
+    /* Full viewport height */
+}
+
+
+.clouds {
+    opacity: 0.4; /* Adjusted opacity */
+    pointer-events: none;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%; /* Adjust the height if needed */
+    z-index: 2; /* Make sure clouds are above the video */
+}
+
+.clouds-1,
+.clouds-2,
+.clouds-3 {
+    background-repeat: repeat-x;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height:300; /* Adjust if necessary */
+}
+
+/* Cloud animation styles */
+@keyframes clouds-loop-1 {
+    to { background-position: 1000px 0px; }
+}
+
+.clouds-1 {
+    background-image: 
+      linear-gradient(to bottom, rgba(255, 66, 66, 0.692), rgba(255, 0, 106, 0.692)), /* Light pink overlay */
+      url("https://s.cdpn.io/15514/clouds_2.png"); /* Cloud image */
+    animation: clouds-loop-1 20s infinite linear;
+}
+
+@keyframes clouds-loop-2 {
+    to { background-position: 1000px 0; }
+}
+
+.clouds-2 {
+    background-image: 
+      linear-gradient(to bottom, rgba(255, 106, 106, 0), rgba(255, 57, 140, 0)), /* Light pink overlay */
+      url("https://s.cdpn.io/15514/clouds_1.png"); /* Cloud image */
+    animation: clouds-loop-2 15s infinite linear;
+}
+
+@keyframes clouds-loop-3 {
+    to { background-position: -1579px 0; }
+}
+
+.clouds-3 {
+    background-image: 
+      linear-gradient(to bottom, rgba(255, 106, 106, 0), rgba(255, 57, 140, 0)), /* Light pink overlay */
+      url("https://s.cdpn.io/15514/clouds_3.png"); /* Cloud image */
+    animation: clouds-loop-3 17s infinite linear;
+}
+
+#quiz-box {
+    position: relative; /* To ensure it stays above clouds and video */
+    z-index: 3; /* Ensures it appears above everything */
+    text-align: center; /* Center text within quiz box */
+    color: black;
+     /* Change text color for better visibility */
+}
+
+
+#quiz-box {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 5px 55px rgba(0, 0, 0, 0.685);
+ 
+}
+
+
+#quiz-box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+label {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+input[type="radio"] {
+    transform: scale(1.2);
+}
+
+/* Button Styling */
+button {
+    background-color: #ff3c7d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #ff6196;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #ff3c7d;
+    color: white;
+}

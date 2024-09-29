@@ -1,0 +1,1292 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; 
+    margin: 0;
+    padding: 0;
+    background-color: #ffebf2;
+    color: #333;
+    text-align: center;
+}
+
+/* Header styles */
+header {
+    position: relative; 
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white; 
+}
+
+header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: 1; 
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.4); /* White overlay */
+    z-index: 2; 
+}
+
+header h1 {
+    position: relative;
+    z-index: 3;
+    color: #000;
+    font-size: 3em;
+    overflow: hidden;
+}
+
+/* Styling for each group of words */
+.word {
+    display: inline-block;
+    transform: translateY(100%); /* Start below the line */
+    animation: slideInGroup 1s forwards;
+    opacity: 0;
+    animation-timing-function: ease-in-out;
+}
+
+/* Slide reveal animation */
+@keyframes slideInGroup {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+/* Delays for each group */
+.word.akshata {
+    animation-delay: 0.5s;
+}
+
+.word.inspiration {
+    animation-delay: 1.5s;
+}
+
+.word.hub {
+    animation-delay: 2.5s;
+}
+
+.heart-icon {
+    font-size: 1.5em;
+    color: red;
+    display: inline-block;
+    animation: heartAppear 3.5s ease forwards;
+}
+
+@keyframes heartAppear {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+
+/* Navbar styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 52, 103, 0.13);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.507);
+    height: 65px;
+    padding: 0 25px; 
+    z-index: 1000; 
+    position: relative; /* Initially relative */
+    width: 100%; 
+}
+
+/* Navbar fixed class */
+nav.fixed {
+    position: fixed; /* Fixes the navbar */
+    top: 0; 
+    left: 0; 
+    width: 100%; /* Ensure it covers the full width */
+}
+
+/* Logo Styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.heart-shape {
+    width: 30px; 
+    height: 30px;
+    position: relative;
+    background-color: #ff236d;
+    transform: rotate(-45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.heart-shape::before,
+.heart-shape::after {
+    content: "";
+    width: 30px; 
+    height: 30px;
+    background-color: #ff236d;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart-shape::before {
+    top: -18px;
+}
+
+.heart-shape::after {
+    left: 18px;
+}
+
+.logo-slogan{font-family: 'Dancing Script', cursive;
+    font-size: 1.2em; 
+    z-index: 1;
+    font-weight: bolder;
+    margin-bottom: 8px;
+    margin-right: 20em;}
+
+.logo-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2em; 
+    color: white;
+    transform: rotate(45deg);
+    z-index: 1;
+    margin-bottom: 8px;
+    margin-left: 7px;
+}
+
+/* Navbar Links */
+.nav-content {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    position: relative;
+}
+
+.nav-list {
+    margin-right: 30px;
+}
+
+.link-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    height: 100px;
+    transition: all 0.5s;
+}
+
+.link-item.active {
+    transform: translateY(-10px);
+}
+
+.link-icon {
+    margin-top: 7px;
+    font-size: 28px;
+    color: #ff236d;
+    transition: all 0.5s;
+}
+
+.link-item.active .link-icon {
+    color: #ff236d;
+}
+
+.link-text {
+    font-size: 12px;
+    font-weight: bold;
+    color: #000000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.link-item.active .link-text {
+    opacity: 1;
+}
+
+/* Indicator */
+.indicator {
+    position: absolute;
+    top: -12px;
+    left: 48px;
+    height: 30px;
+    width: 30px;
+    background-color: #FFF;
+    border: 6px solid #ff236d;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s;
+}
+
+/* Indicator's triangle */
+.indicator::before,
+.indicator::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    height: 20px;
+    width: 15px;
+}
+
+.indicator::before {
+    left: -15px;
+    background-color: #FFF;
+    border-top-right-radius: 20px;
+    box-shadow: 1px -10px #ff236d;
+}
+
+.indicator::after {
+    right: -15px;
+    background-color: #FFF;
+    border-top-left-radius: 20px;
+    box-shadow: -1px -10px #ff236d;
+}
+
+#love-note-icon {
+    margin-right: 35px;
+}
+
+
+
+/* Hover Effects */
+.link-item:hover .link-icon {
+    color: #ff236d;
+}
+
+.link-item:hover .link-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Love Note Specific Styles */
+.link-item.love-note .link-text {
+    font-size: 14px;
+    color: #ff236d;
+    font-weight: bold;
+    opacity: 0; 
+    transition: opacity 0.5s; 
+}
+
+.link-item.love-note:hover .link-text {
+    opacity: 1; 
+    transform: translateY(0);
+}
+
+/* Additional styles for spacing */
+section {
+    padding-top: 80px; /* Add spacing for when the navbar becomes fixed */
+}
+.section:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease-in-out;
+    background-color: rgba(255, 235, 235, 0.9); /* Slightly change the background */
+}
+
+.container-emotional-support h2{font-size: 2.5em; /* Larger font for emphasis */
+    color: #ff236d; /* Romantic color for text */
+    text-shadow: 1px 1px 3px rgba(255, 35, 109, 0.6);}
+
+/* Emotional Support Section Styles */
+.container-emotional-support {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+    
+}
+.container-emotional-support h2:hover {
+    color: #ff69b4; /* A lighter pink */
+    text-shadow: 1px 1px 5px rgba(255, 105, 180, 0.8);
+}
+#emotional-support{background-color: #ffebeb; /* Soft pink background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.685);
+    padding: 40px 20px; /* Padding around the section */
+    margin: 20px;}
+
+.reason-button {
+    background-color: #ff4081; /* Button color */
+    color: white; /* Text color */
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1..1em;
+    /* Remove the transition property */
+  }
+
+.reason-button:hover {
+    background-color: #ff45a2; /* Darker shade on hover */
+    box-shadow: 0 0 10px rgba(255, 65, 100, 0.7); /* Glow effect */
+    cursor: pointer; /* Change cursor */
+}
+
+#modalSupportMessage{color:rgb(0, 0, 0);font-weight: bold;text-shadow: 1px 2px 10px rgb(255, 0, 212);}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    opacity: 0; /* Initial opacity */
+    transition: opacity 0.3s ease; /* Smooth transition for fade effect */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 15px rgb(255, 36, 120);/* Could be more or less, depending on screen size */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Animation Styles */
+.thank {
+    opacity: 0;
+    color: #fae428;
+    font-size: 1.5em;
+}
+
+
+
+
+    
+    /* Section Styling */
+    .section {
+        padding: 50px 20px;
+        border-radius: 10px;
+        
+    }
+
+    /* Hover Effects */
+    .section:hover {
+        transform: scale(1.02);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Different Colors for Sections */
+    .love-note-section {
+    background-color: #ffebeb; /* Soft pink background */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.685); /* Soft shadow for depth */
+    padding: 40px 20px; /* Padding around the section */
+    margin: 20px; /* Margin around the section */
+    position: relative; /* To position heart animations */
+}
+
+.love-note-section h2 {
+    font-size: 2.5em; /* Larger font for emphasis */
+    color: #ff236d; /* Romantic color for text */
+    text-shadow: 1px 1px 3px rgba(255, 35, 109, 0.6); /* Subtle text shadow */
+    margin-bottom: 20px; /* Space below the heading */
+}
+.love-note-section h2:hover {
+    color: #ff69b4; /* A lighter pink */
+    text-shadow: 1px 1px 5px rgba(255, 105, 180, 0.8);
+}
+
+
+.love-note-section p {
+    font-family: 'Dancing Script', cursive; /* Beautiful font */
+    font-size: 1.5em; /* Slightly larger for readability */
+    color: #333; /* Dark color for contrast */
+    text-align: center; /* Centered text */
+    animation: fadeIn 0.6s ease; /* Fade-in animation */
+}
+
+.love-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+/* Heart animation */
+.love-note-section::before {
+    content: "❤️"; /* Heart icon */
+    font-size: 3em; /* Larger heart */
+    position:fixed;
+    top: 35px; 
+    left: 63%; 
+    transform: translateX(-50%);
+    animation: heartBeat 1.5s infinite; /* Heartbeat animation */
+}
+
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Slightly enlarge the heart */
+    }
+}
+.upsc-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+.upsc-articles-section {
+    background-color: #ffebeb;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.685);
+    margin: 20px;
+    text-align: center;
+}
+
+.upsc-title {
+    font-size: 2.5em;
+    color: #ff236d;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(255, 35, 109, 0.6);
+}
+
+.upsc-title:hover{color: #ff69b4; /* A lighter pink */
+    text-shadow: 1px 1px 5px rgba(255, 105, 180, 0.8);}
+
+.upsc-description {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.upsc-carousel {
+    width: 100%; /* Adjust width to fit the container */
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scrolling */
+    padding: 10px; /* Add padding for better readability */
+}
+
+.upsc-carousel-slides {
+    display: flex;
+    gap: 20px; /* Adjust gap between slides as needed */
+}
+
+.upsc-carousel-slide {
+    flex: 0 0 auto;
+    width: 250px;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 0; /* Remove margin for a more compact layout */
+}
+
+.upsc-carousel-slide h3 {
+    font-size: 1.01em;
+    margin-bottom: 10px;
+}
+
+.upsc-carousel-slide p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.upsc-carousel-slide a {
+    display: block;
+    padding: 10px;
+    background-color: #ff236d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.upsc-carousel-slide a:hover {
+    background-color: #ff45a2;
+}
+
+
+    
+
+   footer {
+    position: relative;
+    padding: 20px;
+    height: 100px; 
+    font-size: 2em;
+    font-weight: bold;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.8); /* Soft background color */
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+    z-index: 2;
+}
+
+
+footer video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire footer */
+    object-position: bottom; /* Ensures the video covers the entire footer */
+    z-index: 1; /* Below the content */
+}
+
+.clouds {
+    opacity: 0.4; /* Adjusted opacity */
+    pointer-events: none;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%; /* Adjust the height if needed */
+    z-index: 2; /* Make sure clouds are above the video */
+}
+
+.clouds-1,
+.clouds-2,
+.clouds-3 {
+    background-repeat: repeat-x;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 500px; /* Adjust if necessary */
+}
+
+/* Cloud animation styles */
+@keyframes clouds-loop-1 {
+    to { background-position: 1000px 0px; }
+}
+
+.clouds-1 {
+    background-image: 
+      linear-gradient(to bottom, rgba(255, 66, 66, 0.692), rgba(255, 0, 106, 0.692)), /* Light pink overlay */
+      url("https://s.cdpn.io/15514/clouds_2.png"); /* Cloud image */
+    animation: clouds-loop-1 20s infinite linear;
+}
+
+@keyframes clouds-loop-2 {
+    to { background-position: 1000px 0; }
+}
+
+.clouds-2 {
+    background-image: 
+      linear-gradient(to bottom, rgba(255, 106, 106, 0), rgba(255, 57, 140, 0)), /* Light pink overlay */
+      url("https://s.cdpn.io/15514/clouds_1.png"); /* Cloud image */
+    animation: clouds-loop-2 15s infinite linear;
+}
+
+@keyframes clouds-loop-3 {
+    to { background-position: -1579px 0; }
+}
+
+.clouds-3 {
+    background-image: 
+      linear-gradient(to bottom, rgba(255, 106, 106, 0), rgba(255, 57, 140, 0)), /* Light pink overlay */
+      url("https://s.cdpn.io/15514/clouds_3.png"); /* Cloud image */
+    animation: clouds-loop-3 17s infinite linear;
+}
+
+
+
+    
+    footer p {
+        position: relative;
+        font-family: 'Dancing Script', cursive;
+        z-index: 3; /* Higher index so it appears above everything */
+        text-align: center;
+        color: #000; /* Set a contrasting color for the text */
+    }
+    
+
+    /* Article Link Styling */
+    ul li a {
+        color: #6a1b9a;
+        text-decoration: none;
+    }
+
+    
+
+    /* Make Title Stand Out */
+    header h1 {
+        font-size: 3em;
+        letter-spacing: 3px;
+        color: #ff4081;
+    }
+
+    /* Add Padding and Fix Heart */
+    header .heart-icon {
+        margin-left: 10px;
+        vertical-align: middle;
+    }
+
+    /* Hover Effects for Links */
+    ul li a:hover {
+        color: #ff007f;
+        text-shadow: 2px 2px 5px #ffebf2;
+        transform: scale(1.02);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Footer Styling */
+    footer p {
+        color: #d81b60;
+    }
+
+    footer p:hover{
+        transform: scale(1.03);
+        transition: transform 0.8s ease-in-out;
+        color: #4a148c;
+    }
+
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .section {
+        animation: fadeIn 0.6s ease forwards; /* Apply fade-in animation */
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+    
+
+    h2:hover {
+        background-color: transparent;
+        transform: scale(1.1); /* Slightly grow on hover */
+        color: #ff007f; /* Change color on hover */
+    }
+
+
+    
+    .gallery-section h2 {
+        font-size: 2.5em; /* Larger font for emphasis */
+        color: #ff236d; /* Romantic color for text */
+        text-shadow: 1px 1px 3px rgba(255, 35, 109, 0.6); /* Subtle text shadow */
+        margin-bottom: 20px; /* Space below the heading */
+    }
+    .gallery-section h2:hover {
+        color: #ff69b4; /* A lighter pink */
+        text-shadow: 1px 1px 5px rgba(255, 105, 180, 0.8);
+    }
+
+
+    .gallery-section {
+        background-color: #ffebeb; /* Soft pink background */
+        border-radius: 15px; /* Rounded corners */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.685); /* Soft shadow for depth */
+        padding: 40px 20px; /* Padding around the section */
+        margin: 20px; /* Margin around the section */
+        position: relative /* Background color for the gallery section */
+    }
+    
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px; /* Space between images */
+    }
+    .column{display: flex;flex-direction: column;gap:40px;}
+    .row1,.row2{
+        display: flex;
+        flex-direction:row;
+        gap: 25px;
+    }
+    
+    .wrap {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: 35vmin;
+        height: 50vmin;
+        border: 8px solid;
+        border-image: linear-gradient(
+        -50deg,
+        #ff236d,       /* Darker pink */
+        #ff3f7c,       /* Intermediate pink */
+        #ff69b4,       /* Lighter pink */
+        #ff236d,       /* Darker pink again */
+        #ff6fa5,       /* Slightly different shade */
+        #ff4f85,       /* Softer pink */
+        #ff69b4        /* Final lighter pink */
+    ) 1;
+
+        transition: 0.3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .overlay {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        padding: 1rem 0.75rem;
+        background: #ffffff; /* Dark green overlay background */
+        transition: 0.4s ease-in-out;
+        z-index: 1;
+    }
+    
+    .overlay-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 5vmin;
+        height: 100%;
+        padding: 0.5rem 0 0 0.5rem;
+        border: 3px solid;
+        border-image: linear-gradient(to bottom, #ffffff 5%, rgb(255, 146, 188) 35% 65%, #ff00aa 95%) 0 0 0 100%;
+        transition: 0.3s ease-in-out 0.2s;
+        z-index: 1;
+    }
+    
+    .overlay-content h1 {
+        font-size: 1.5em; /* Adjust the size of the title */
+        font-weight: bold; /* Make the title bold */
+        color: rgb(0, 0, 0); /* Set text color to white */
+        text-shadow: -1px -1px 0 #ffe600,  
+                     1px -1px 0 #ffe600,  
+                     -1px 1px 0 #ffe600,  
+                     1px 1px 0 #fffb00; /* Add a black stroke around the text */
+    }
+    
+    .overlay-content p {
+        font-weight: bold; /* Make the paragraph text bold */
+        color: #ffe600; /* Set text color to white */
+        text-shadow: -1px -1px 0 #000,  
+                     1px -1px 0 #000,  
+                     -1px 1px 0 #000,  
+                     1px 1px 0 #000; /* Add a black stroke around the text */
+    }
+    
+
+
+
+    .image-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40vmin;
+        height: 100%;
+        background-size: cover;
+        transition: 0.3s ease-in-out;
+    }
+    
+    .inset {
+        max-width: 50%;
+        margin: 0.25em 1em 1em 0;
+        border-radius: 0.25em;
+        float: left;
+    }
+    
+    .text {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: auto;
+        height: 100%;
+        padding: 3vmin 4vmin;
+        background: #ffffff;
+        box-shadow: inset 1px 1px 15px 0 rgba(0, 0, 0, 0.4);
+        overflow-y: scroll;
+        color: #d81b60;
+    }
+    
+    .wrap:hover .overlay {
+        transform: translateX(-60vmin); /* Slide out effect on hover */
+    }
+    
+    .wrap:hover .image-content {
+        width: 30vmin; /* Change width on hover */
+    }
+    
+    .wrap:hover .overlay-content {
+        border: none; /* Remove border on hover */
+        transition-delay: 0.2s; /* Delay effect for overlay content */
+    }
+    
+    .wrap:hover .text {
+        opacity: 1; /* Make text visible on hover */
+    }
+    
+    /* Add any additional animations or effects here */
+    
+
+    .gratitude-wall h2 {
+        font-size: 2.5em; /* Larger font for emphasis */
+        color: #ff236d; /* Romantic color for text */
+        text-shadow: 1px 1px 3px rgba(255, 35, 109, 0.6); /* Subtle text shadow */
+        margin-bottom: 20px; /* Space below the heading */
+    }
+    .gratitude-wall,.love-letter h2:hover {
+        color: #ff69b4; /* A lighter pink */
+        text-shadow: 1px 1px 5px rgba(255, 105, 180, 0.8);
+    }
+
+
+    .love-letter h2 {
+        font-size: 2.5em; /* Larger font for emphasis */
+        color: #ff236d; /* Romantic color for text */
+        text-shadow: 1px 1px 3px rgba(255, 35, 109, 0.6); /* Subtle text shadow */
+        margin-bottom: 20px; /* Space below the heading */
+    }
+
+    .combined-love-section {
+        display: flex;
+        justify-content: space-between; /* Ensure space between the sections */
+        align-items: flex-start; /* Align sections to the top */
+        padding: 20px;
+    }
+    
+    .gratitude-wall {
+        background-color: #ffebeb; /* Soft pink background */
+        border-radius: 15px; /* Rounded corners */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.685); /* Soft shadow for depth */
+        padding: 40px 20px; /* Padding around the section */
+        width: 48%; /* Make section take equal width */
+    }
+    
+    .love-letter-section {
+        background-color: #ffebeb; /* Soft pink background */
+        border-radius: 15px; /* Rounded corners */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.685); /* Soft shadow for depth */
+        padding: 40px 20px; /* Padding around the section */
+        width: 48%;
+        height: 330px; /* Make section take equal width */
+    }
+    
+    .gratitude-wall .wall-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr); /* Six hearts per row */
+        grid-gap: 10px; /* Spacing between items */
+        justify-items: center; /* Center the hearts */
+        align-items: start;
+    }
+    
+    .gratitude-item {
+        position: relative; /* To make hidden-message absolute within its parent */
+        padding: 10px;
+        text-align: center;
+    }
+    
+    .heart {
+        font-size: 40px; /* Reduced heart size to fit more hearts */
+        cursor: pointer;
+    }
+    
+    .hidden-message {
+        display: none;
+        position: absolute;
+        top: -60px; /* Adjust the distance of the tooltip */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff; /* Match background to fit the theme */
+        padding: 10px 15px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+        width: 160px;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif; /* Match font to the theme */
+        color: #333;
+        text-align: center;
+        transition: opacity 0.3s ease-in-out, top 0.3s ease-in-out;
+        opacity: 0;
+        z-index: 10;
+    }
+    
+    .gratitude-item:hover .hidden-message {
+        display: block;
+        top: 40px; /* Adjust the position when hovering */
+        opacity: 1;
+        background-color: #ffcad4;
+    }
+    
+    .hidden-message {
+        display: none;
+        position: absolute;
+        top: -60px;  /* Adjust the distance of the tooltip */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;  /* Match background to fit the theme */
+        padding: 10px 15px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+        width: 160px;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;  /* Match font to the theme */
+        color: #333;
+        text-align: center;
+        transition: opacity 0.3s ease-in-out, top 0.3s ease-in-out;
+        opacity: 0;
+    }
+    
+    .gratitude-item:hover .hidden-message {
+        display: block;
+        top: 40px;  /* Adjust the position when hovering */
+        opacity: 1;
+        background-color: #ffcad4;
+    }
+    
+    .envelope {
+        position: relative;
+        width: 200px;
+        height: 120px;
+        background-color: #F0E68C;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+    
+    .flap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-color: #FFD700;
+        border-bottom: 2px solid #B8860B;
+        transition: transform 0.6s ease;
+        transform-origin: top;
+    }
+    
+    .letter {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 100%);
+        width: 80%;
+        padding: 10px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+    
+    .envelope:hover .flap {
+        transform: rotateX(180deg);
+    }
+    
+    .envelope:hover .letter {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+    
+    .lettermodal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+        display: flex; /* Use flexbox to center content */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+    }
+    
+    .letter-modal-content {
+        background-color: #ffcad4;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 500px;
+        height: 400px; /* Fixed height */
+        overflow-y: auto; /* Enables vertical scrolling */
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .letter-modal-content::-webkit-scrollbar {
+        width: 8px; /* Set the width of the scrollbar */
+    }
+    .letter-modal-content::-webkit-scrollbar-thumb {
+        background-color: #ffcad4; /* Match the scrollbar color with the theme */
+        border-radius: 10px;
+    }
+    
+    .letter-modal-content::-webkit-scrollbar-thumb:hover {
+        background-color: #ffb3c1; /* Darker on hover */
+    }
+    
+    .letter-close-btn {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 10px;
+        margin-top: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    
+    
+
+
+
+
+/* MCQ Topic Button Styling */
+.mcq-topic-btn {
+    margin-top: 5px;
+    background-color: #ff4081; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;/* Transition for hover effect */
+}
+
+.mcq-topic-btn:hover {
+    background-color: #ff6196; /* Change background color on hover */
+    transform: scale(1.05); /* Slightly grow on hover */
+}
+
+/* Optional: Make buttons slightly larger on focus */
+.mcq-topic-btn:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(255, 64, 129, 0.5); /* Add a subtle glow effect */
+}
+
+.mcqs-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); 
+    display: flex; /* Black w/ opacity */
+}
+
+.mcq-modal-content {
+    background-color: #ffcad4;
+    margin: 1% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    border-radius: 20px; 
+    display: flex; /* Use flexbox for column layout */
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Could be more or less, depending on screen size */
+}
+
+.mcq-topic-container {
+    display: flex;
+    flex-direction: column;
+   
+    gap: 10px; /* Space between buttons */
+}
+
+
+.mcq-close-button{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.mcq-close-button:hover,
+.mcq-close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.mcq-close-btn {
+    background-color: #f44336; /* Red */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.mcq-close-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+
+
+
+
+
+
+
+
+
+.custom-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); 
+    display: flex;/* Black w/ opacity */
+}
+
+.test-modal-content {
+    background-color: #ffcad4;
+    margin: 1% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    border-radius: 20px; 
+    display: flex; /* Use flexbox for column layout */
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center;
+    
+   /* Could be more or less, depending on screen size */
+}
+
+
+
+.test-topic-container {
+    display: flex;
+    flex-direction: column;
+   
+    gap: 10px; /* Space between buttons */
+}
+
+.topic-btn {
+    margin-top: 5px;
+    background-color: #ff4081; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.topic-btn:hover {
+    background-color:#ff6196; /* Darker blue on hover */
+}
+
+.test-close-btn {
+    background-color: #f44336; /* Red */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.test-close-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
